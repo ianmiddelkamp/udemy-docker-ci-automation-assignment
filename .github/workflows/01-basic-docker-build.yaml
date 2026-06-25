@@ -28,4 +28,4 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ianmiddelkamp/udemy-docker-ci-automation-assignment:latest,ianmiddelkamp/udemy-docker-ci-automation-assignment:01
           cache-from: type=gha
-          cahce-to: type=gha,mode=max
+          cache-to: type=gha,mode=max
