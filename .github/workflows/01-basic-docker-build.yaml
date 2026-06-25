@@ -13,6 +13,10 @@ jobs:
     name: Build Image
     runs-on: ubuntu-latest
     steps:
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
       - name: Set up docker Buildx
         uses: docker/setup-buildx-action@v4
             
@@ -29,3 +33,4 @@ jobs:
           tags: ianmiddelkamp/udemy-docker-ci-automation-assignment:latest,ianmiddelkamp/udemy-docker-ci-automation-assignment:01
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
