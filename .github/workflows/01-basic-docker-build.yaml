@@ -13,6 +13,8 @@ jobs:
     name: Build Image
     runs-on: ubuntu-latest
     steps:
+      - name: Set up docker Buildx
+        uses: docker/setup-buildx-action@v4.1
             
       - name: Login to Docker Hub
         uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 #v4.1.0
@@ -25,3 +27,5 @@ jobs:
         with:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ianmiddelkamp/udemy-docker-ci-automation-assignment:latest,ianmiddelkamp/udemy-docker-ci-automation-assignment:01
+          cache-from: type=gha
+          cahce-to: type=gha,mode=max
