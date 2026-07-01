@@ -36,7 +36,7 @@ jobs:
           platforms: linux/amd64    
 
       - name: Run Trivy for all CVEs (non-blocking)
-        uses: aquasecurity/trivy-action@264c9c5e188ea085e7377fd77abd17bfbd4e5926 #master
+        uses: aquasecurity/trivy-action@df678dbccf677bc6937338d569ba0da18964a8cc #master
         with:
           image-ref: ${{ github.run_id }}
           exit-code: 0
